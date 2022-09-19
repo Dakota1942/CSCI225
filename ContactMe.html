@@ -1,42 +1,57 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
     <head>
         <title> Contact Me </title>
+        <meta charset="UTF-8">
     </head>
 
     <body>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/A-mO7rbYtgk" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        
-        <form name="feedback">
-            <fieldset>
-                <legend> Feedback </legend>
-                <p> *First Name: <input type="text" name="fname" placeholder="Anonymous" required> </p>
-                <p> *Last Name: <input type="text" name="lname" placeholder="Anonymous" required> </p>
-                <p> Email: <input type="email" name="mail" placeholder="name@domain.com"> </p>
-                <p> Phone Number: <input type="tel" name="telephone" placeholder="(xxx)-xxx-xxxx" pattern="\(\d{3})-\d{3}-\d{4}"> </p>
-                <p> Please select the date: <input type="date" name="selectdate"> </p>
-                <p> Do you recommend this wesite? </p>
-                <p> <input type="radio" name="recommend" value="Yes"> Yes 
-                    <input type="radio" name="recommend" value="No"> No 
-                </p>
-                <p> Choose your favorite website:
-                    <select size="1" name="favwebsite" id="websites">
-                        <option value="Google"> Google </option>
-                        <option value="Facebook"> Facebook </option>
-                        <option value="Twitter"> Twitter </option>
-                        <option value="Time"> Time </option>
-                        <option value="Instagram"> Instagram </option>
-                    </select>
-                </p>
-                <p> Rate this website on a scale from 1 to 10:</p>
-                <p> 1 <input type="range" name="scale" min="1" max="10" step="1" value="5"> 10 </p>
-                <p> Additional comments: </p>
-                <p> <textarea name="Comment" cols="25" rows="8"> </textarea> </p>
-                <p> <input type="reset" name="clear" value="Click to clear form"> </p>
-                <p> <input type="submit" name="submitform" value="Click to submit"> </p>
-            </fieldset>
-        </form>
-    
+        <div class="video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/A-mO7rbYtgk" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div>
+            <form name="feedback">
+                <fieldset>
+                    <legend> Feedback </legend>
+                    <p> *First Name: <input type="text" name="fname" placeholder="Anonymous" required> </p>
+
+                    <p> *Last Name: <input type="text" name="lname" placeholder="Anonymous" required> </p>
+
+                    <p> Email: <input type="email" name="mail" placeholder="name@domain.com"> </p>
+
+                    <p> Phone Number: <input type="tel" name="telephone" placeholder="xxx-xxx-xxxx" pattern="\d{3}-\d{3}-\d{4}"> </p>
+
+                    <p> Please select the date: <input type="date" name="selectdate"> </p>
+
+                    <p> Do you recommend this wesite? </p>
+                    <p> <input type="radio" name="recommend" value="Yes"> Yes 
+                        <input type="radio" name="recommend" value="No"> No 
+                    </p>
+
+                    <p> Choose your favorite website:
+                        <select size="1" name="favwebsite" id="websites">
+                            <option value="Google"> Google </option>
+                            <option value="Facebook"> Facebook </option>
+                            <option value="Twitter"> Twitter </option>
+                            <option value="Time"> Time </option>
+                            <option value="Instagram"> Instagram </option>
+                        </select>
+                    </p>
+
+                    <p> Rate this website on a scale from 1 to 10:</p>
+                    <p> 1 <input type="range" name="rating" min="1" max="10" step="1" value="5"> 10 </p>
+
+                    <p> Additional comments: </p>
+                    <p> <textarea name="Comment" cols="25" rows="8"> </textarea> </p>
+
+                    <p> <input type="reset" name="clear" value="Click to clear form"> </p>
+                    
+                    <p> <input type="submit" name="submitform" value="Click to submit"> </p>
+                </fieldset>
+            </form>
+        </div>
     </body>
 </html>
