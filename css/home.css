@@ -1,0 +1,180 @@
+
+
+html {
+    background-color: hsla(580, 50%, 60%, .9);
+    padding: 3%;
+}
+
+body {
+    
+    padding: 3%;
+}
+
+div.Introduction p, div.Assignment li, div.Portfolio li, div.Contact address {
+    color: hsl(250, 80%, 20%);
+    line-height: .75cm;
+    text-align: left;
+    font-family: Courier-New, monospace;
+    font-size: 100%;
+}
+
+div.navbar ul li, div.Assignment ol li, div.Portfolio ol li {
+    color: hsl(250, 80%, 50%);
+    line-height: .75cm;
+    font-weight: 90%;
+}
+
+h1 {
+    color: hsla(9, 35%, 20%, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 1px; 
+    text-shadow: 0.3cm 0.3cm 0.1cm rgb(67, 64, 64);
+}
+
+div.Introduction, div.navbar, div.Footer {
+    position: fixed;
+    opacity: 100%;
+}
+
+div.navbar {
+    float: left;
+    padding: 0%;
+    margin: 0pt;
+    width: 100%;
+    background-color: rgba(200, 100, 80, 1);
+    z-index: 999;
+}
+
+#navbar {
+    top: 0pt;
+    left: 0pt;
+    right: 0pt;
+}
+
+#navbar ul li {
+    display: inline-block;
+    list-style: none;
+    width: 15%;
+    text-align: center;
+    padding: 0% 2% 0% 2%;
+    border-radius: 50px;
+    background-color: burlywood;
+    z-index: 999;
+}
+
+div.Introduction {
+    width: 100%;
+    margin: -3.5% 0% 0% -6.3%;
+    background-color: rgba(200, 100, 80, 1);
+    z-index: 999;
+}
+
+div.Introduction h1 {
+    float: left;
+    width: 60%;
+    height: 1cm;
+    padding-left: 6%;
+}
+
+div.Introduction p {
+    float: left;
+    width: 60%;
+    height: 3cm;
+    padding-left: 6%;
+    margin: -1% 0% 0% 0%;
+}
+
+div.Introduction img {
+    float: right;
+    width: 8cm;
+    height: 3.5cm;
+    margin: -4% 6% 0% 0%;
+}
+
+div.Assignment {
+    position: absolute;
+    right: 0pt;
+    padding: 0% 6% 0% 0%;
+    top: 9cm;
+}
+
+div.Portfolio {
+    position: relative;
+    width: 60%;
+    top: 150px;
+}
+
+div.Contact {
+    position: relative;
+    top: 160px;
+    width: 100%;
+}
+
+div.Schedule {
+    position: relative;
+    width: 100%;
+    top: 70%;
+    padding: 12% 0% 0% 0%;
+}
+
+div.Schedule table {
+    border: 1;
+    padding: 0%;
+    vertical-align: middle;
+    empty-cells: show;
+    text-align: center;
+    color: hsl(250, 80%, 20%);
+}
+
+div.Footer {
+    bottom: 0cm;
+    width: 100%;
+    margin: 0% 0% 0% -6.3%;
+    background-color: rgba(200, 100, 80, 1);
+    z-index: 999;
+}
+
+#Footer {
+    bottom: 0pt;
+    left: 0pt;
+    right: 0pt;
+}
+
+#Footer footer, details {
+    text-align: left;
+}
+
+div.Portfolio, div.Contact, div.Schedule {
+    border-right: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+}
+
+a:link {
+    text-decoration: none;
+    color: brown;
+}
+
+a:hover {
+    color: bisque;
+    border: brown dashed;
+}
+
+p::first-letter {
+    font-size: 150%;
+}
+
+ol li::first-letter {
+    font-size: 150%;
+}
+
+div.Portfolio ol li:nth-child(3n+1) {
+    box-shadow: -5px -5px 50px grey;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(200, 100, 80, 1);
+}
+
+tr:nth-child(odd):active {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
