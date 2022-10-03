@@ -1,5 +1,16 @@
 
+/*
+index.html design file by Dakota Jones
+    1. html and body
+    2. colors/fonts/sizes for p,link, and h1 elements
+    2. introduction section
+    3. body of page
+    4. footer section
+    5. transformation rules and other design aspects
+*/
 
+
+/* --- html and body --- */
 html {
     background-color: hsla(580, 50%, 60%, .9);
     padding: 3%;
@@ -11,7 +22,8 @@ body {
     padding: 3%;
 }
 
-div.Introduction p, div.Assignment li, div.Portfolio li, div.Contact address {
+/* --- colors/fonts/sizes for p, link, and h1 elements --- */
+p {
     color: hsl(250, 80%, 20%);
     line-height: .75cm;
     text-align: left;
@@ -29,13 +41,14 @@ h1 {
     color: hsla(9, 35%, 20%, 0.9);
     border: 3px solid darkblue;
     border-radius: 20% 20% / 20% 20%;
-    background-image: linear-gradient(white, burlywood, bisque);
     display: inline-block;
     text-transform: uppercase;
     letter-spacing: 1px; 
-    text-shadow: 0.3cm 0.3cm 0.1cm rgb(67, 64, 64);
+    text-shadow: 0.3cm 0.3cm 0.1cm rgb(68, 68, 80);
+    transition: ease-in-out 2s, transform 2s, text-shadow 2s;
 }
 
+/* --- introduction section --- */
 div.Introduction, div.navbar, div.Footer {
     position: fixed;
     opacity: 100%;
@@ -43,7 +56,7 @@ div.Introduction, div.navbar, div.Footer {
 
 div.navbar {
     float: left;
-    padding: 0%;
+    padding: 0% 0% 2% 0%;
     margin: 0pt;
     width: 100%;
     background-color: rgba(200, 100, 80, 1);
@@ -63,13 +76,13 @@ div.navbar {
     text-align: center;
     padding: 0% 2% 0% 2%;
     border-radius: 50px;
-    background-color: burlywood;
+    background-image: linear-gradient(bisque, burlywood, darkgoldenrod);
     z-index: 999;
 }
 
 div.Introduction {
     width: 100%;
-    margin: -3.5% 0% 0% -6.3%;
+    margin: -3% 0% 0% -6.5%;
     background-color: rgba(200, 100, 80, 1);
     z-index: 999;
 }
@@ -78,7 +91,7 @@ div.Introduction h1 {
     float: left;
     width: 60%;
     height: 1cm;
-    padding-left: 6%;
+    padding: 0% 0% 0% 6%;
     border-style: none;
     background-image: none;
 }
@@ -98,6 +111,7 @@ div.Introduction img {
     margin: -4% 6% 0% 0%;
 }
 
+/* --- body section --- */
 div.Assignment {
     position: absolute;
     right: 0pt;
@@ -133,6 +147,7 @@ div.Schedule table {
     color: hsl(250, 80%, 20%);
 }
 
+/* --- footer section --- */
 div.Footer {
     bottom: 0cm;
     width: 100%;
@@ -151,6 +166,7 @@ div.Footer {
     text-align: left;
 }
 
+/* --- transformation rules and other design aspects --- */
 div.Portfolio, div.Contact, div.Schedule {
     border-right: 3px solid #fff;
     border-bottom: 3px solid #fff;
@@ -162,16 +178,18 @@ a:link {
 }
 
 a:hover {
-    color: bisque;
+    color: white;
     border: brown dashed;
 }
 
 p::first-letter {
     font-size: 150%;
+    font-style: italic;
 }
 
 ol li::first-letter {
     font-size: 150%;
+    font-style: italic;
 }
 
 div.Portfolio ol li:nth-child(3n+1) {
@@ -182,11 +200,15 @@ tr:nth-child(even) {
     background-color: rgba(200, 100, 80, 1);
 }
 
+tr:nth-child(odd) {
+    background-color: bisque;
+}
+
 tr:nth-child(odd):active {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 h1:hover {
-    transition: ease-in-out 2s, transform 2s;
-    text-shadow: 0.3cm 0.3cm 0.1cm black;
+    transform: scale(1.2);
+    text-shadow: 0.3cm 0.3cm 0.1cm sienna;
 }
