@@ -6,7 +6,8 @@ html {
 }
 
 body {
-    
+    background-image: url("../img/back.jpg");
+    background-size: cover;
     padding: 3%;
 }
 
@@ -21,11 +22,15 @@ div.Introduction p, div.Assignment li, div.Portfolio li, div.Contact address {
 div.navbar ul li, div.Assignment ol li, div.Portfolio ol li {
     color: hsl(250, 80%, 50%);
     line-height: .75cm;
-    font-weight: 90%;
+    font-weight: bold;
 }
 
 h1 {
     color: hsla(9, 35%, 20%, 0.9);
+    border: 3px solid darkblue;
+    border-radius: 20% 20% / 20% 20%;
+    background-image: linear-gradient(white, burlywood, bisque);
+    display: inline-block;
     text-transform: uppercase;
     letter-spacing: 1px; 
     text-shadow: 0.3cm 0.3cm 0.1cm rgb(67, 64, 64);
@@ -74,6 +79,8 @@ div.Introduction h1 {
     width: 60%;
     height: 1cm;
     padding-left: 6%;
+    border-style: none;
+    background-image: none;
 }
 
 div.Introduction p {
@@ -118,7 +125,7 @@ div.Schedule {
 }
 
 div.Schedule table {
-    border: 1;
+    border: 5px dashed;
     padding: 0%;
     vertical-align: middle;
     empty-cells: show;
@@ -150,8 +157,8 @@ div.Portfolio, div.Contact, div.Schedule {
 }
 
 a:link {
-    text-decoration: none;
     color: brown;
+    text-decoration: none;
 }
 
 a:hover {
@@ -177,4 +184,9 @@ tr:nth-child(even) {
 
 tr:nth-child(odd):active {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1:hover {
+    transition: ease-in-out 2s, transform 2s;
+    text-shadow: 0.3cm 0.3cm 0.1cm black;
 }
