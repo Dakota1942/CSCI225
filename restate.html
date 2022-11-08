@@ -4,15 +4,25 @@
     <head>
         <title> Loan Calculator </title>
         <meta charset="utf-8">
-        <!--<link rel="stylesheet" href="css/home.css">-->
+        <link rel="stylesheet" href="css/estate.css">
         <link rel="stylesheet" href="https://www.cssfontstack.com/Courier-New">
+        <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function(){
+                $('.calculator').hide();
+                $('#loan').click(function(){
+                    $('.calculator').show();
+                });
+            });
+        </script>
     </head>
     <body>
         <div class="navbar">
             <ul>
                 <li> Buy </li>
                 <li> Sale </li>
-                <li> Loan </li>
+                <li id="loan"> Loan </li>
                 <li> About </li>
             </ul>
         </div>
@@ -21,55 +31,36 @@
             <p> Loan Amount: <input type="number" name="lAmount" id="lAmount"> $ </p>
             <p> Interest Rate: <input type="number" name="iRate" id="iRate"> % </p>
             <p> Loan Term: <input type="number" name="lTerm" id="lTerm"> Years </p>
-            <p> Start Date: <input type="month" id="year" name="year" min="2011-01" value="2011-01">
-            </p>
+            <p> Start Date: <input type="number" id="year" name="year" min="2011" max="2022" value="2011"> </p>
             <input type="submit" id="calc" name="calc" value="Calculate">
             <div id="output"></div>
         </div>
         <script>
             function Calculate() {
-                var lAmt = parseInt(document.getElementById('lAmount').value);
+                var lAmt = parseFloat(document.getElementById('lAmount').value);
                 var iRt = parseFloat(document.getElementById('iRate').value);
-                var lTrm = parseInt(document.getElementById('lTerm').value);
-                var index = document.getElementById('year').selectedIndex;
-                var start = 0;
-                switch (index) {
-                    case 0:
-                        agefactor=.08;
-                        break;
-                    case 1:
-                        agefactor=.09;
-                        break;
-                    case 2:
-                        agefactor=.11;
-                        break;
-                    case 3:
-                        agefactor=.17;
-                        break;
-                }
+                var lTrm = parseFloat(document.getElementById('lTerm').value);
+                var start = parseFloat(document.getElementById('year').value);
+                var months = lTrm * 12;
+
                 var MIR = iRt/12;
-                var MP = lAmt * (MIR)/Math.pow((1-(1+MIR),(-lTrm*12)));
-                var IPM = lAmt * MIR;
-                var PPM = MP - IPM;
+                var MP = lAmt * (MIR)/(1-(Math.pow(1+MIR), (-months)));
+                var balance = lAmt-MP;
+
                 var outputlist = "<table>";
+                outputlist += "<th> Date </th>" + "<th> Interest </th>" + "<th> Principal </th>" + "<th> Balance </th>";
                 for(var i=1; i<=lTrm; i++) {
-                    outputlist += "<tr>";
-                    for(var j=1; j<=lTrm; j++) {   
-                        outputlist += "<td>";
-                        outputlist += start;
-                        outputlist += "</td>";
-                    }
-                    for(var j=1; j<=lTrm; j++) {   
-                        outputlist += "<td>";
-                        outputlist += MIR;
-                        outputlist += "</td>";
-                    }
-                    for(var j=1; j<=lTrm; j++) {   
-                        outputlist += "<td>";
-                        outputlist += PPM;
-                        outputlist += "</td>";
-                    }
-                    outputlist += "</tr>";
+                    var IPM = balance * MIR;
+                    var PPM = IPM - MP;
+                    outputlist+="<tr>";
+                    outputlist+= "<td>" + start + "</td>";
+                    start+=1;
+
+                    outputlist += "<td>" + IPM.toFixed(2) + "</td>";
+                    outputlist += "<td>" + PPM.toFixed(2) + "</td>";
+                    outputlist += "<td>" + balance.toFixed(2) + "</td>";
+                    balance = balance-PPM;
+                    outputlist+="</tr>";
                 }
                 outputlist += "</table>"
                 document.getElementById('output').innerHTML=outputlist;

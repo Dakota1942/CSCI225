@@ -1,0 +1,32 @@
+html {
+    background-image: url("../img/Estate.jpg");
+    background-size: cover;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+div.navbar {
+    top: 0pt;
+    left: 0pt;
+    right: 0pt;
+}
+
+div.navbar ul li {
+    display: inline-block;
+    list-style: none;
+    width: 10%;
+    text-align: center;
+    padding: 0% 2% 0% 2%;
+    border-radius: 0px;
+    background-color: bisque;
+    z-index: 999;
+}
+
+div.calculator {
+    position: fixed;
+    right: 10%;
+    top: 5cm;
+    background-color: bisque;
+    text-align: left;
+    padding: 3%;
+    border: solid burlywood 10px;
+}
